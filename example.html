@@ -1,0 +1,48 @@
+<!doctype html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <title>JQuery Style Lab</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+		var currentX=0+'px';
+		var currentY=0+'px';
+  
+        function updateSize(newSize) {
+         $(shira).css("width", newSize);
+		 $(shira).css("height", newSize);
+        }
+
+		function positionImage() {
+			$("#shira").css({ transform : 'translate(' +currentX+','+ currentY +')' })
+		}
+
+        function updateLeftPosition(newX) {
+			currentX=newX+'px';
+            positionImage();
+        }
+
+        function updateTopPosition(newY) {
+			currentY=newY+'px';
+            positionImage();
+        }
+</script>
+</head>
+
+<body>
+    <div>
+    <p>Size (0 - 400px):</p>
+    <input type="range" min="0" max="400" value="100" class="slider" id="sizeSlider" oninput="updateSize(this.value)">
+    <p>X (0 - 400px):</p>
+    <input type="range" min="0" max="400" value="0" class="slider" id="xSlider" oninput="updateLeftPosition(this.value)">
+    <p>Y (0 - 400px):</p>
+    <input type="range" min="0" max="400" value="0" class="slider" id="ySlider" oninput="updateTopPosition(this.value)">
+    </div>
+	<div>
+    <img src="./shira.png" id="shira" style="width: 100px; height: 100px;" alt="Shira">
+	</div>
+
+    <!-- PLEASE DO NOT ADD ANY JAVASCRIPT CODE HERE! :) -->
+    <script src="jquery.js"></script>
+</body>
+
+</html>
