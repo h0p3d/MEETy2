@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Greeting Home</title>
+</head>
+
+<body>
+
+    <h1>Welcome to my website!</h1>
+    <p>
+        <a href="{{ url_for('hello_route', name='Mayuri') }}">
+            Greet Mayuri
+        </a>
+    </p>
+    <p>
+        <a href="{{ url_for('hello_route', name='Emily') }}">
+            Greet Emily
+        </a>
+    </p>
+
+</body>
+
+</html>

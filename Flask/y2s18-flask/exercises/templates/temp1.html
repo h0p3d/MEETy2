@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <meta charset="utf-8">
+    <title>Why Squash is great</title>
+  </head>
+  <body>
+    <h1> Squash is the best sport </h1>
+	<p> Squash is great because it is fast paced, fun, and easy to learn. It is quite simply the best sport ever!</p>
+	{% if show_more %}
+	<p> My favorite players are: </p>
+	<ol>
+		{% for player in fav_players %}
+		<li> {{player}} </li>
+		{% endfor %}
+	</ol>
+	{% endif %}
+  </body>
+</html>

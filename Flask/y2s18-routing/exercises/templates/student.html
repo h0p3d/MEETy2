@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+<head>
+    <title>Student</title>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css')}}">
+</head>
+<body>
+    <h1>This is the page for the student {{name}} with year {{year}} and id {{ student_id }}.</h1>
+    {% if student.finished_lab %}
+    <p> {{name}} has completed the lab </p>
+    {% else %}
+    <p> {{name}} has not completed the lab </p>
+    {% endif %}
+    <a href = "{{url_for('home')}}"> Home </a>
+</body>
+</html>

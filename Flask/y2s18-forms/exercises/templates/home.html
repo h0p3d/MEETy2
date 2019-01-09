@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+    <title>Home</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}">
+</head>
+<body>
+    <h1>Welcome to the home page!</h1>
+    
+    <hr>
+    <p><a href = "{{url_for('add_student_route')}}">Add a student</a></p>
+    <p><a href = "{{url_for('delete_student_route')}}">Remove a student</a></p>
+    <p><a href = "{{url_for('edit_student_route')}}">Edit a student</a></p>
+    {% for student in students %}
+    <p>
+	    Name: <a href="{{url_for('display_student', student_id=student.student_id)}}">{{student.name}}</a><br>
+	    Class: {{student.year}}<br>
+	    Finished Lab: {{student.finished_lab}}
+    </p>
+    {% endfor %}
+
+</body>
+</html>

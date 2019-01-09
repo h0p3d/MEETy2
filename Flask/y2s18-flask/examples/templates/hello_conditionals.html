@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+   <body>
+   
+      <h1>Hello Pets!</h1>
+
+      {% if no_pets == true %}
+      <p> I have no pets! But, I want to get: </p>
+
+
+
+      {% else %}
+      <p> I have pets! My pets are: </p>
+      {% endif %}
+      <h2> Pets </h2>
+      <ul>
+      	{% for pet in pets %}
+      	<li> {{pet}} </li>
+      	{% endfor %}
+      </ul>
+      
+   </body>
+</html>
